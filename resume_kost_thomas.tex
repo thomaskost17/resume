@@ -1,0 +1,118 @@
+\documentclass[11pt, letterpaper]{article}
+\usepackage[margin=0.45in]{geometry}
+\usepackage{amsmath,amssymb,enumitem,scrextend}
+\usepackage[hidelinks]{hyperref}
+
+% SET VARIOUS LENGTHS
+\setlength\parindent{0pt}
+\pagenumbering{gobble}
+\setlist[itemize]{noitemsep, nolistsep}
+\newcommand\smallspace{4pt}
+\newcommand\indentlength{0.25in}
+
+\def\Vhrulefill{\leavevmode\leaders\hrule height 1ex depth \dimexpr0.1pt-0.9ex\hfill\kern0pt}
+
+% DEFINE CATEGORY ENVIRONMENT
+\newenvironment{category}[1]
+{
+	\vspace{\smallspace}
+	\noindent {\LARGE{\sc{#1}}} \hspace{2pt}
+	\Vhrulefill
+	\vspace{\smallspace}
+	\begin{addmargin}[\indentlength]{0in}
+	}
+	{
+	\end{addmargin}
+	\vspace{\smallspace}
+}
+
+% DEFINE EXPERIENCE ENVIRONMENT
+\newenvironment{experience}[4][3]{
+	\vspace{\smallspace}
+	\noindent\textbf{#2}
+	\hfill \textit{#3} \\
+	#4
+	\vspace{\smallspace}
+	\begin{itemize}
+	}
+	{
+	\end{itemize}
+	\vspace{\smallspace}
+}
+
+\begin{document}
+	\begin{center}
+		\begin{Huge}\begin{sc}Thomas Kost\end{sc}\end{Huge} \\
+		\vspace{3pt}
+		\href{mailto:thomaskost17@g.ucla.edu}{{thomaskost17@ucla.edu}} \hspace{0.05in} $\bullet$ \hspace{0.05in} \href{tel:14083982926}{(408) 398\,-\,2926}  \hspace{0.05in} $\bullet$ \hspace{0.05in} \href{https://github.com/thomaskost17}{{github.com/thomaskost17}}
+		
+		U.S. Citizen
+	\end{center}
+	
+	\vspace{-3pt}
+	\begin{category}{Education}
+		
+		\vspace{\smallspace}
+		\noindent\textbf{University of California, Los Angeles} \hfill \textit{Anticipated June 2022} \\
+		M.S. Electrical Engineering, concentration in Signals \& Systems
+		\begin{itemize}
+			\item \textit{GPA not yet established}
+		\end{itemize}
+		\vspace{\smallspace}
+		B.S. Electrical Engineering, Cum Laude \hfill \textit{June 2021}
+		\begin{itemize}
+			\item Cumulative GPA: \textbf{3.823}
+		\end{itemize}
+		Relevant Coursework: Digital Filter Design, Convex Optimization, Linear Dynamic Systems, Communication \& Information Theory, Machine Learning, Analog Circuit Design
+	\end{category}
+	
+	\begin{category}{Work Experience}
+		\begin{experience}{Viasat -- Space Systems Engineering Intern}{June 2021 - November 2021}{Space Systems Engineer responsible for creating an analysis tool for terrestrial-satellite communication networks \hspace{-10pt}}
+			\item Designed user friendly application analyzing novel Link-16 terrestrial-satellite network performance 
+			\begin{itemize}
+				\item Created back-end ingesting raw recording files and calculating network performance metrics
+				\item Created simulator determining satellite position and pointing angles from telemetry 
+				\item Linked C++ back-end and simulator to python GUI with Cython to create a user friendly interface
+			\end{itemize}
+
+		\end{experience}
+		
+		\begin{experience}{General Dynamics -- Signal Processing Engineering Intern}{June 2020 - September 2020}{Digital Signal Processing Engineer for high-throughput Software Defined Radio applications}
+			\item Created CUDA based signal processing library to accelerate DSP algorithms through using GPUs
+			\begin{itemize}[noitemsep,nolistsep]
+				\item Designed polyphase channelizer to isolate and filter QPSK signals and return them at baseband
+				\item Designed CUDA based Costas loop for time aligning QPSK signals
+				\item Presented polyphase channelizer for use in 5G applications
+			\end{itemize}
+			\item Used CMake to generate maintainable and expandable code base with automated unit testing
+		\end{experience}
+		
+		\begin{experience}{Viasat -- Software Engineering Intern}{June 2019 - September 2019}{Designed software to produce  human readable abbreviated  messages upon receipt at connected terminals}
+			\item Created a parsing tool in python for government Link-16 standards, \textbf{automated 3 month task} to minutes
+			\item Created C++ engine pairing live Link-16 messages with human readable definitions
+			\item Integrated back-end engine and libraries generated from parsing Link-16 standards into production code
+		\end{experience}
+	\end{category}
+	
+	\begin{category}{Project Experience}
+		\begin{experience}{Bruin Racing Baja SAE -- Electronics Director}{September 2018 - June 2021}{Designed, tested, and validated the sensor and computational suite for the Baja SAE collegiate competition}
+			\item Designed and implemented robust sensor and actuation system for Electronically actuated Transmission
+			\item Improved engine performance by \textbf{5\%} through redesigned power system 
+			\item Created Data Acquisition systems characterizing impact events, braking capabilities, \& engine performance
+			\item Standardized hardware and software devops pipelines to improve collaboration and visibility
+			 
+		\end{experience}
+		\begin{experience}{Quad-copter Design -- Personal Project}{September 2018 - Present}{Designed and implemented a Teensy based quad-copter, control logic, and transmitter}
+			\item Designed Transmitter and Reciever to allow for customizable and longer distance RF control of the vehicle
+			\item Designed PID controller for self leveling of the quadcopter
+		\end{experience}
+	
+	\end{category}
+	
+	\begin{category}{Skills}
+		\begin{itemize}[noitemsep,nolistsep]
+			\item \textbf{Software:} C++, Python, MATLAB, CUDA, CMake, shell scripting, GitLab/Github CICD, Verilog
+			\item \textbf{Skills:} Filtering, Estimation, Image Processing, Orbital mechanics, System ID, Classification, Simulation
+		\end{itemize}
+	\end{category}
+\end{document}
